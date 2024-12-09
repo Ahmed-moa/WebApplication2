@@ -1,0 +1,36 @@
+﻿@model IQueryable<WebApplication2.Models.ProductVM>
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Layout/Main_Layout.cshtml";
+}
+
+<h1>Welcome to products</h1>
+
+
+<a asp-controller="ProductController1" asp-action="Create" class="btn btn-primary">Add new product</a>
+<table class="table table-striped table-bordered text-center">
+    <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Product Code</th>
+        <th>Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductCode</td>
+            <td>@item.Price</td>
+            <td><a asp-controller="ProductController1" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Edit</a></td>
+            <td><a asp-controller="ProductController1" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></td>
+            
+        </tr>
+    }
+</table>
+
+

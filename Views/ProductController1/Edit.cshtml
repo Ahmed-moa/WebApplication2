@@ -1,0 +1,48 @@
+﻿@model WebApplication2.Models.ProductVM
+
+
+@{
+    ViewBag.Title = "Edit";
+
+}
+
+<h1>Edit product</h1>
+
+<form asp-controller="ProductController1" asp-action="Edit" method="post" class="form-group">
+
+    <label asp-for="ProductName"> Product Name </label>
+    <input type="text" asp-for="ProductName" class="form-control" />
+    <span class="text-danger" asp-validation-for="ProductName"></span>
+
+    <br />
+
+    <label asp-for="ProductCode"> Product Code </label>
+    <input type="text" asp-for="ProductCode" class="form-control" />
+    <span class="text-danger" asp-validation-for="ProductCode"></span>
+
+
+    <br />
+
+    <label asp-for="Price">Product Price </label>
+    <input type="number" asp-for="Price" class="form-control" />
+    <span class="text-danger" asp-validation-for="Price"></span>
+
+
+    <br />
+
+    <center>
+        <input type="submit" value="Edit now" class="btn btn-primary" />
+    </center>
+
+
+
+
+
+
+
+</form>
+
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
